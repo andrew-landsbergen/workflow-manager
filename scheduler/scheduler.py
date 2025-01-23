@@ -38,6 +38,9 @@ class Scheduler:
     def get_capacity(self):
         return self._taskQueue.maxlen
     
+    def get_tasks(self):
+        return list(self._taskQueue)
+    
     def add_task(self, t: Task):
         if len(self._taskQueue) != self._taskQueue.maxlen:
             self._taskQueue.append(t)
